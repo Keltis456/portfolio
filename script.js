@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-links a');
     const navbar = document.querySelector('.navbar');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
 
     const observerOptions = {
         root: null,
@@ -30,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.style.boxShadow = 'none';
         }
+
+        scrollIndicator?.classList.toggle('hidden', currentScroll > 80);
 
         lastScroll = currentScroll;
     });
